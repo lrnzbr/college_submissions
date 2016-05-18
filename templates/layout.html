@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/ico" href="{{url_for('static',filename='favicon.ico')}}"/>
+
+<title>Welcome to SixUp!</title>
+
+
+<link href="{{url_for('static', filename = 'bootstrap.min.css')}}" rel="stylesheet">
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+  <body>
+
+    <div class="container-fluid">
+	<div class="row header">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+		<a href={{url_for('main')}}>	<h3 class="text-center">
+				SixUp
+			</h3><h4 class="text-center">Applicaiton Tracking System</h4></a>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="row sign_in">
+
+		<div class="col-md-10">
+
+		</div>
+		<div class="col-md-2 ">
+      {% if 'name' in session %}
+      <p> You are currently signed in as {{session['name']}}.<br>
+      <a href = "{{url_for('logout')}}">Log Out</a></p>
+      {% else %}
+      <a href="{{url_for('showLogin')}}">Log In</a><br>
+      <a href = "{{url_for('new_student')}}">Sign Up</a>
+
+      {% endif %}
+		</div>
+	</div>
+	<div class="row shopping_cart" >
+		<div class="col-md-10">
+		</div>
+		<div class="col-md-2">
+      View your <a href={{ url_for('view_applications') }}>Your Applications</a>.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 flash_messages">
+      {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li> <strong> {{ message }} </strong> </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+{% endwith %}
+		</div>
+
+	</div>
+    {% block body %}{% endblock %}
+  <div class="row">
+    <div class="col-md-10">
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

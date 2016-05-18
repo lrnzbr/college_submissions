@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Log In Here</h1>
+
+
+<form action="{{ url_for('showLogin') }}" method = 'post'>
+  Email Address:<br>
+  <input type="text" name="email"><br>
+  Password:<br>
+  <input type="password" name="password">
+   <input type="submit" value="Login">
+</form>
+
+
+
+<p> Don't have an account? Create one <a href={{url_for('new_student')}}>Here</a>
+{%endblock%}

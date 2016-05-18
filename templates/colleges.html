@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h1> Applications for {{session['name']}} </h1>
+
+{%if applications == []%}
+<p> You currently have no pending applicaitons.</p>
+{% else %}
+<table>
+  <tr><th> School</th><th>Timestamp</th><th>Essay</th></tr>
+{% for app in applications %}
+  <tr>
+    <td>{{app.school}}</td>
+    <td>{{app.timestamp}}</td>
+    <td>{{app.essay}}</td>
+
+    <td><a href= {{url_for('update_app',app_id = app.id)}}> Update Application </a></td>
+    <td><form action={{url_for('remove_app', app_id = app.id)}} method='post'> <input type='submit' value="Remove Application"> </form></td>
+</tr>
+    {% endfor %}
+
+  </table>
+
+
+
+
+
+{% endif %}
+<a href={{url_for('new_application')}}>Start A New Application</a>
+</br>
+<a href={{ url_for('main')}}>Home</a>
+
+
+
+
+{%endblock%}

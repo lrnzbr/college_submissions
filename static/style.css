@@ -1,0 +1,32 @@
+.color-primary-0 { color: #57D4F1 }	/* Main Primary color */
+.color-primary-1 { color: #F2FCFE }
+.color-primary-2 { color: #97E3F5 }
+.color-primary-3 { color: #1EC9F1 }
+.color-primary-4 { color: #01C1EF }
+
+.color-complement-0 { color: #FFAB58 }	/* Main Complement color */
+.color-complement-1 { color: #FFF9F3 }
+.color-complement-2 { color: #FFCC9A }
+.color-complement-3 { color: #FF8B19 }
+.color-complement-4 { color: #FF7F00 }
+
+body{background-color: #97E3F5; text-decoration-color:none;}
+.header {background-color: #01C1EF;
+background-image: url('bubbles.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+opacity: .7;}
+.itemDiv{
+  background-color:#FFF;
+  color: #97E3F5 ;
+  border-radius: 25px;
+
+    border: 5px solid black;
+
+    text-align: center;
+
+}
+.sign_in{background-color: #57D4F1  ;}
+.flash_messages{background-color: #FF7F00;
+text-align: center;
+text-decoration: none;}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h1> Update Application </h1>
+
+<form action="{{ url_for('update_app', app_id = app.id) }}" id = 'updateappform' method = 'post'>
+  School:<br>
+  <input type="text" name="school" value={{app.school}}><br>
+  Essay:<br>
+  <textarea rows="4" cols="60" name="essay" form = 'updateappform'>{{app.essay}}</textarea><br>
+   <input type="submit" value="Update Application">
+</form>
+
+
+
+
+<a href={{ url_for('main')}}>Home</a>
+{%endblock%}

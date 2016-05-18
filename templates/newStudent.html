@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1> New Student</h1>
+
+<p> **This is <b>not</b> a secure HTTP connection. For this toy application avoid using a real email/password combination**</p>
+<form action="{{ url_for('new_student') }}" method = 'post'>
+  Name:<br>
+  <input type="text" name="name"><br>
+  Email Address:<br>
+  <input type="text" name="email"><br>
+  Mailing Address:<br>
+  <input type="text" name="address"><br>
+  Password:<br>
+  <input type="password" name="password">
+   <input type="submit" value="Create Account">
+</form>
+
+{%endblock%}

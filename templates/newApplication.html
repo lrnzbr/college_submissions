@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h1> New Application </h1>
+
+<form  action="{{ url_for('new_application')}}" id='newstudentform' method = 'post'>
+  School:<br>
+  <input type="text" name="school" ><br>
+  Essay:<br>
+  <textarea rows="4" cols="60" name="essay" form = 'newstudentform'></textarea><br>
+   <input type="submit" value="Submit Application">
+</form>
+
+
+
+</br></br>
+<a href={{ url_for('main')}}>Home</a>
+{%endblock%}
